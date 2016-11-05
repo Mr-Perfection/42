@@ -6,7 +6,7 @@
 /*   By: slee <slee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 20:28:05 by slee              #+#    #+#             */
-/*   Updated: 2016/11/03 19:18:39 by slee             ###   ########.fr       */
+/*   Updated: 2016/11/05 10:48:37 by slee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	list = (t_list*)malloc(sizeof(t_list));
 	if (list == NULL)
 		return (NULL);
-	
-	if (content == NULL) {
+	if (content == NULL)
+	{
 		list->content = NULL;
 		list->content_size = 0;
-	} else {
+	}
+	else
+	{
 		list->content = malloc(content_size);
 		if (list->content == NULL)
 			return (NULL);

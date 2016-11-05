@@ -2,8 +2,11 @@
 
 PROJECTS
 ```
+Piscine (All the bootcamp projects)
+-Meh.
+
 libft (C Library from scratch)
-Building all C library functions from the scratch.
+-Building all C library functions from the scratch. Nasty.
 
 ```
 EXAMS
