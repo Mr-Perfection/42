@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slee <slee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 14:43:34 by slee              #+#    #+#             */
-/*   Updated: 2016/11/05 10:59:28 by slee             ###   ########.fr       */
+/*   Created: 2016/11/05 11:00:19 by slee              #+#    #+#             */
+/*   Updated: 2016/11/05 11:00:53 by slee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoinfree(char *s1, char *s2)
 {
 	int		i;
 	char	*str;
@@ -28,5 +28,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	while (*s2)
 		str[++i] = *s2++;
 	str[++i] = '\0';
+	free(s1);
+	free(s2);
 	return (str);
 }

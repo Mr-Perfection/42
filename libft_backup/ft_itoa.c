@@ -6,13 +6,13 @@
 /*   By: slee <slee@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 20:29:26 by slee              #+#    #+#             */
-/*   Updated: 2016/11/01 23:45:33 by slee             ###   ########.fr       */
+/*   Updated: 2016/11/05 10:54:54 by slee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_size(long n)
+static int		get_size(long n)
 {
 	int s;
 
@@ -25,7 +25,7 @@ int		get_size(long n)
 	return (s);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*res;
 	int		size;
