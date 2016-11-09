@@ -1,23 +1,21 @@
+void swap(int *tab, unsigned int i, unsigned int j)
+{
+	int temp = tab[i];
+	tab[i] = tab[j];
+	tab[j] = temp;
+}
+
 void sort_int_tab(int *tab, unsigned int size)
 {
-	unsigned int i = 0;
-	unsigned int j = 0;
-	int temp = 0;
 	if (tab == 0)
 		return ;
-	while (i < size)
+	unsigned int i, j;
+	for (i = 0; i < size; ++i)
 	{
-		j = i + 1;
-		while (j < size)
+		for(j = i; j < size; ++j)
 		{
 			if (tab[j] < tab[i])
-			{
-				temp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = temp;
-			}
-			j++;
+				swap(tab, i, j);
 		}
-		i++;
 	}
 }
