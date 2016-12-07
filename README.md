@@ -19,6 +19,7 @@
 ### FDF (Graphic programming)
 * create a simplified graphic “wireframe”, representation of a relief landscape linking various points
 (x, y, z) via segments.
+
 ## EXAMS
-* C Exam (Beginner)
+### C Exam (Beginner)
 - Begineer level 0-5. Need to get at least 75% 5 times to move onto the next stage.
