@@ -1,14 +1,13 @@
-CC =	gcc
 
-FLAG =	-c -Wall -Wextra -Werror
+NAME = libft.a
 
-NAME =	libft.a
+CC = gcc
 
-LIB =	ar rc
+FLAGS = -Wall -Wextra -Werror
 
-RLIB =	ranlib
+INCLUDES = ./includes
 
-SRCS =	ft_putchar.c \
+SRC =	ft_putchar.c \
 		ft_putstr.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -23,6 +22,8 @@ SRCS =	ft_putchar.c \
 		ft_strdel.c \
 		ft_strclr.c \
 		ft_strdup.c \
+		ft_strndup.c \
+		ft_strcdup.c \
 		ft_strlen.c \
 		ft_strcpy.c \
 		ft_strncpy.c \
@@ -66,21 +67,26 @@ SRCS =	ft_putchar.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_strclen.c \
+		ft_strtol.c \
+		get_next_line.c
 
-OBJS =	$(SRCS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-all: 	$(NAME)
+all: $(NAME)
 
-$(NAME):
-		@$(CC) $(FLAG) $(SRCS)
-		@$(LIB) $(NAME) $(OBJS)
-		@$(RLIB) $(NAME)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -I $(INCLUDES)
 
 clean:
-		@/bin/rm -f $(OBJS)
+	rm -rf $(OBJ)
 
-fclean:	clean
-		@/bin/rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
